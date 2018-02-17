@@ -4,7 +4,7 @@ MAINTAINER kukam "kukam@freebox.cz"
 
 # Install base packages
 RUN apk update && apk upgrade && \
-    apk add curl wget bash tree nginx
+    apk add bash tree nginx
     
 EXPOSE 80
 
