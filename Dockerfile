@@ -1,11 +1,13 @@
-
-FROM nginx/alpine
+FROM nginx:alpine
 MAINTAINER kukam "kukam@freebox.cz"
 
 # Install base packages
 RUN apk update && apk upgrade && \
-    apk add bash tree nginx
-    
+    apk add bash && \
+    rm -fr /var/cache/apk/*
+
 EXPOSE 80
+
+ADD https://raw.githubusercontent.com/kukam/docker-alpine-nginx/master/default.conf /etc/nginx/conf.d/default.conf
 
 CMD ["nginx", "-g", "daemon off; error_log stderr info;"]
