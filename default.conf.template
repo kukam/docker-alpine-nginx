@@ -1,5 +1,3 @@
-
-
 server {
   listen   80;
   root ${PWE_CONF_home}
