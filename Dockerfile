@@ -8,6 +8,8 @@ RUN apk update && apk upgrade && \
 
 EXPOSE 80
 
-ADD https://raw.githubusercontent.com/kukam/docker-alpine-nginx/master/default.conf /etc/nginx/conf.d/default.conf
+ADD https://raw.githubusercontent.com/kukam/docker-alpine-nginx/master/default.conf.template /tmp/default.conf.template
+
+ENTRYPOINT ["/tmp/default.conf.template > /etc/nginx/conf.d/default.conf"]
 
 CMD ["nginx", "-g", "daemon off; error_log stderr info;"]
