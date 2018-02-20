@@ -9,7 +9,7 @@ RUN apk update && apk upgrade && \
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
-ADD https://raw.githubusercontent.com/kukam/docker-alpine-nginx/master/default.conf /etc/nginx/conf.d/default.conf
+COPY default.conf /etc/nginx/conf.d/default.conf
 
 EXPOSE 80
 
