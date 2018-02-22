@@ -1,7 +1,7 @@
 #!/bin/bash
 
 PWEHOST=`/sbin/ip route|awk '/default/ { print $3 }'`
-PWEROOT=${PWE_CONF_pwe_home:-"/PWE/examples/static_web"}
+PWEROOT=${PWE-CONF-pwe-home:-"/PWE/examples/static_web"}
 
 sed -i "s@/PWEROOT@$PWEROOT@g" /etc/nginx/conf.d/default.conf
 sed -i "s@PWEHOST@$PWEHOST@g" /etc/nginx/conf.d/default.conf
