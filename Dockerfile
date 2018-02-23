@@ -1,9 +1,11 @@
-FROM nginx:alpine
+FROM alpine:latest
+
+#FROM nginx:alpine
+
 MAINTAINER kukam "kukam@freebox.cz"
 
 # Install base packages
-RUN apk update && apk upgrade && \
-    apk add bash gettext && \
+RUN apk --update --no-cache add bash gettext nginx && \
     rm -fr /var/cache/apk/*
 
 COPY entrypoint.sh /entrypoint.sh
