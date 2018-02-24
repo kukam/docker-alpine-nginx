@@ -4,7 +4,8 @@ FROM alpine
 MAINTAINER kukam "kukam@freebox.cz"
 
 # Install base packages
-RUN apk --update --no-cache add bash gettext nginx \
+# gettext
+RUN apk --update --no-cache add bash nginx \
     && mkdir /run/nginx \ 
     && rm -fr /var/cache/apk/*
 
