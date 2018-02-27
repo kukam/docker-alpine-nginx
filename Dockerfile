@@ -1,5 +1,4 @@
 FROM alpine
-#FROM nginx:alpine
 
 MAINTAINER kukam "kukam@freebox.cz"
 
